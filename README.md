@@ -37,6 +37,7 @@ dependencies
   sudo apt-get install build-essential libtool autotools-dev autoconf libssl-dev  libboost-all-dev libdb5.1++-dev git libminiupnpc-dev -y
 
 building (make sure you are on the main directory, not in /src)
+
     ./autogen.sh
     ./configure --without-gui --without-tests
     make
@@ -45,10 +46,11 @@ building (make sure you are on the main directory, not in /src)
 ### Building horuscoin-qt on Linux (qt4)
 dependencies
 
-  sudo apt-get update
-  sudo apt-get install build-essential libtool autotools-dev autoconf libssl-dev  libboost-all-dev libdb5.1++-dev libqt4-dev libprotobuf-dev protobuf-compiler git libqrencode-dev libminiupnpc-dev -y
+sudo apt-get update
+sudo apt-get install build-essential libtool autotools-dev autoconf libssl-dev  libboost-all-dev libdb5.1++-dev libqt4-dev libprotobuf-dev protobuf-compiler git libqrencode-dev libminiupnpc-dev -y
 
 building (make sure you are on the main directory, not in /src)
+
     ./autogen.sh
     ./configure --with-gui=qt4 --without-tests
     make USE_UPNP=1 USE_IPV6=1 USE_QRCODE=1
@@ -61,6 +63,7 @@ dependencies
   sudo apt-get install git build-essential libssl-dev libdb5.1++-dev  libboost-all-dev libqrencode-dev libminiupnpc-dev libqt5core5a  autotools-dev autoconf qttools5-dev-tools qttools5-dev  libqt5dbus5  libqt5gui5 libprotobuf-dev protobuf-compiler -y
 
 building (make sure you are on the main directory, not in /src)
+
     ./autogen.sh
     ./configure --with-gui=qt5 --without-tests
     make USE_UPNP=1 USE_IPV6=1 USE_QRCODE=1
