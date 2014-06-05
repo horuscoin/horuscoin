@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Horuscoin
+Comment=Horuscoin P2P Cryptocurrency
+Comment[fr]=Horuscoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Horuscoin, eşten eşe kriptografik sanal para birimi
+Exec=horuscoin-qt %u
+Terminal=false
+Type=Application
+Icon=horuscoin128
+MimeType=x-scheme-handler/horuscoin;
+Categories=Office;Finance;

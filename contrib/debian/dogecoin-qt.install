@@ -1,0 +1,6 @@
+horuscoin-qt usr/bin
+share/pixmaps/horuscoin32.xpm usr/share/pixmaps
+share/pixmaps/horuscoin16.xpm usr/share/pixmaps
+share/pixmaps/horuscoin128.png usr/share/pixmaps
+debian/horuscoin-qt.desktop usr/share/applications
+debian/horuscoin-qt.protocol usr/share/kde4/services/

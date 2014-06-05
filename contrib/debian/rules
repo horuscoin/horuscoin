@@ -1,0 +1,33 @@
+#!/usr/bin/make -f
+# -*- mode: makefile; coding: utf-8 -*-
+
+#DEB_MAKE_CHECK_TARGET = test_horuscoin
+#build/horuscoind::
+#	$(if $(filter nocheck,$(DEB_BUILD_OPTIONS)),,src/test_horuscoin)
+
+DEB_INSTALL_EXAMPLES_horuscoind += debian/examples/*
+DEB_INSTALL_MANPAGES_horuscoind += debian/manpages/*
+
+%:
+	dh --with bash-completion $@
+
+override_dh_auto_build:
+	cd src; $(MAKE) -f makefile.unix horuscoind
+	$(MAKE)
+
+override_dh_auto_clean:
+	if [ -f Makefile ]; then $(MAKE) clean; else rm -rf build/; rm -f horuscoin-qt; fi
+	cd src; $(MAKE) -f makefile.unix clean
+
+override_dh_auto_configure:
+	qmake horuscoin-qt.pro USE_QRCODE=1
+
+override_dh_auto_test:
+	cd src; $(MAKE) -f makefile.unix test_horuscoin
+	src/test_horuscoin
+
+# Ensure wrapper is set executable
+binary-post-install/horuscoind:
+	chmod +x $(cdbs_curdestdir)usr/bin/horuscoind
+binary-post-install/horuscoin-qt:
+	chmod +x $(cdbs_curdestdir)usr/bin/horuscoin-qt
